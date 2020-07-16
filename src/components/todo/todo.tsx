@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import "./todo.scss"
+
 
 interface IProps {
     value: string
@@ -12,7 +14,7 @@ class Todo extends Component<IProps, IState>{
 
     render() {
         return(
-            <div>
+            <div className="todo">
                 <p>{this.props.value}</p>
             </div>
         )

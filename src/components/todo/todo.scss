@@ -1,0 +1,11 @@
+.todo{
+  border-bottom: 1px solid white;
+
+  &:first-child{
+    border-top: 1px solid white;
+  }
+  padding: 0 10px;
+  p{
+    color: white;
+  }
+}
