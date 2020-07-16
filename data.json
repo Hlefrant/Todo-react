@@ -1,0 +1,12 @@
+{
+  "Todos": [
+    {
+      "value": "Vaisselle",
+      "state": "todo"
+    },
+    {
+      "value": "Lessive",
+      "state": "done"
+    }
+  ]
+}
