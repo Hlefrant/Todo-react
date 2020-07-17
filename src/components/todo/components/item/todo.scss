@@ -1,0 +1,14 @@
+.todo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1a1a1a;
+
+  &:first-child{
+    border-top: 1px solid #1a1a1a;
+  }
+  padding: 0 10px;
+  p{
+    color: #1a1a1a;
+  }
+}
