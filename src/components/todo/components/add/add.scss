@@ -1,0 +1,25 @@
+.Add{
+  width: 223px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 25px;
+  border-radius: 49px;
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.5);
+
+  input{
+    border: none;
+    border-bottom: 1px solid black;
+    margin-right: 20px;
+    outline: none;
+  }
+
+  button{
+    background-color: transparent;
+    border: none;
+    font-size: 2em;
+    color: #5271E2;
+    outline: none;
+  }
+
+}

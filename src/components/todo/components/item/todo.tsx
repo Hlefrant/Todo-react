@@ -2,10 +2,10 @@ import React, {Component} from "react";
 import "./todo.scss"
 import * as firebase from 'firebase/app';
 
-
 interface IProps {
     id: string
     value: string
+    date: string
 }
 
 interface IState {
@@ -27,7 +27,10 @@ class Todo extends Component<IProps, IState>{
     render() {
         return(
             <div className="todo">
-                <p>{this.props.value}</p>
+                <div className="content">
+                    <span>{this.props.date}</span>
+                    <p>{this.props.value}</p>
+                </div>
                 <input onChange={this.handleChange} type="checkbox" id="check" name="check"/>
             </div>
         )

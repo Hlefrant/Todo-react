@@ -20,9 +20,6 @@ interface IState {
 
 config()
 
-
-// Initialize Firebase
-
 class List extends Component<IProps, IState> {
     public state: IState = {
         todos: [],
@@ -34,7 +31,7 @@ class List extends Component<IProps, IState> {
         firebase.firestore().collection("todos").onSnapshot((querySnapshot) => {
             this.setState({todos: []})
             querySnapshot.forEach((doc) => {
-                this.state.todos.push(new TodoModel(doc.get("value"), doc.id))
+                this.state.todos.push(new TodoModel(doc.get("value"), doc.id, doc.get("date")))
                 this.setState({
                     state: true
                 })
@@ -51,7 +48,7 @@ class List extends Component<IProps, IState> {
                 <div className="List">
                     {todos.map((todo, i) => {
                         return (
-                            <Todo key={i} id={todo.id} value={todo.value}/>
+                            <Todo key={i} id={todo.id} value={todo.value} date={todo.date}/>
                         )
                     })}
                 </div>

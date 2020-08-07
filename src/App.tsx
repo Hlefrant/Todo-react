@@ -5,18 +5,14 @@ import logo from './logo.svg';
 import Add from "./components/todo/components/add/add";
 
 import './App.css';
-
+import getCurrentDay from "./services/utils/getCurrentDay";
 function App() {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = today.getFullYear();
 
-    const day = dd + '/' + mm + '/' + yyyy;
 
   return (
     <div className="App">
-        <p>{day}</p>
+        <h1>TodoList</h1>
+        <p>{getCurrentDay()}</p>
         <Add/>
       <List/>
     </div>

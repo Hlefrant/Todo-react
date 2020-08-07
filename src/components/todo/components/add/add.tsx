@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import * as firebase from "firebase";
-
-import config from "../../../../services/firebase/config";
+import "./add.scss"
+import getCurrentDay from "../../../../services/utils/getCurrentDay";
 interface IProps {
 }
 
@@ -20,7 +20,8 @@ class Add extends Component<IProps, IState>{
 
     submit = () =>{
         firebase.firestore().collection("todos").add({
-            value: this.state.value
+            value: this.state.value,
+            date: getCurrentDay()
         })
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
@@ -33,9 +34,9 @@ class Add extends Component<IProps, IState>{
 
    public render() {
         return(
-            <div>
+            <div className="Add">
                 <input value={this.state.value} onChange={this.handleChange} type="text"/>
-                <button onClick={this.submit}>Ajouter</button>
+                <button onClick={this.submit}>+</button>
             </div>
         )
     }
